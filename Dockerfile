@@ -20,7 +20,7 @@ RUN adduser --disabled-login --gecos "" tester
 WORKDIR /home/tester
 
 # copy the testnet-box files into the image
-ADD . /home/tester/bitcoin-testnet-box
+COPY .  /home/tester/bitcoin-testnet-box
 
 # make tester user own the bitcoin-testnet-box
 RUN chown -R tester:tester /home/tester/bitcoin-testnet-box
