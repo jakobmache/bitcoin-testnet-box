@@ -18,12 +18,16 @@ start-gui:
 	$(BITCOINGUI) $(B1) &
 	$(BITCOINGUI) $(B2) &
 
+getbalance:
+	$(BITCOINCLI) $(B1) getbalance
+	$(BITCOINCLI) $(B2) getbalance
+
 generate:
 	$(BITCOINCLI) $(B1) generate $(BLOCKS)
 
 getinfo:
-	$(BITCOINCLI) $(B1) getinfo
-	$(BITCOINCLI) $(B2) getinfo
+	$(BITCOINCLI) $(B1) getblockchaininfo
+	$(BITCOINCLI) $(B2) getblockchaininfo
 
 sendfrom1:
 	$(BITCOINCLI) $(B1) sendtoaddress $(ADDRESS) $(AMOUNT)
@@ -32,10 +36,10 @@ sendfrom2:
 	$(BITCOINCLI) $(B2) sendtoaddress $(ADDRESS) $(AMOUNT)
 
 address1:
-	$(BITCOINCLI) $(B1) getnewaddress $(ACCOUNT)
+	$(BITCOINCLI) $(B1) getnewaddress $(ACCOUNT) $(LABEL)
 
 address2:
-	$(BITCOINCLI) $(B2) getnewaddress $(ACCOUNT)
+	$(BITCOINCLI) $(B2) getnewaddress $(ACCOUNT) $(LABEL)
 
 stop:
 	$(BITCOINCLI) $(B1) stop
