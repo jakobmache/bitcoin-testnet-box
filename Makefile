@@ -31,6 +31,7 @@ getinfo:
 
 sendfrom1:
 	$(BITCOINCLI) $(B1) sendtoaddress $(ADDRESS) $(AMOUNT)
+	make generate BLOCKS=10
 
 sendfrom2:
 	$(BITCOINCLI) $(B2) sendtoaddress $(ADDRESS) $(AMOUNT)
