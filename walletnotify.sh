@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-echo $1 >> walletnotify_log.txt
-echo 'Walletnotify'
+curl --header "Content-Type:application/json" --request POST --data "{\"id\":\"$1\"}" web:3000/transactions

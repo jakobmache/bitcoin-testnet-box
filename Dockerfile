@@ -19,9 +19,8 @@ COPY .  /bitcoin-testnet-box
 # run commands from inside the testnet-box directory
 WORKDIR /bitcoin-testnet-box
 
-# Start bitcoin core
-#RUN source startup.sh
-
 # expose two rpc ports for the nodes to allow outside container access
 EXPOSE 19001 19011
 CMD ["/bin/bash"]
+
+
